@@ -1,0 +1,8 @@
+<h1>Notifications<i class="far fa-bell ml-1"></i></h1>
+<div class="jumbotron jumbotron-fluid text-white bg-dark rounded">
+    <div class="container">
+      <div class="alert alert-dark" role="alert" *ngFor="let notification of notifications">
+          <li>{{notification.description}}</li>
+      </div>
+    </div>
+</div>

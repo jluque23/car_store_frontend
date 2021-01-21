@@ -1,0 +1,62 @@
+<h1 class="display-1 mb-3">Role Manager Assignment <i class="fas fa-users"></i></h1>
+
+<app-usermodal *ngIf="usuarioSeleccionado" [usuario]="usuarioSeleccionado"></app-usermodal>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card border-primary mb-3">
+            <div class="card-body bg-light  d-flex justify-content-between">
+                <h3>Total Users {{usuariosTotal}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card border-success mb-3">
+            <div class="card-body bg-light d-flex align-items-center justify-content-between">
+                <h3>Developers {{usuariosAdmin}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card border-warning mb-3">
+            <div class="card-body bg-light d-flex align-items-center justify-content-between">
+                <h3>General Users {{usuariosGeneral}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="input mb-3">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search User">
+</div>
+
+<div class="table-responsive rounded">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th *ngIf="authService.hasRole('ROLE_USER')">Imagen</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Date Created</th>
+                <th>Role</th>
+                <th *ngIf="authService.hasRole('ROLE_ADMIN')">Edit Roles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios | filter:searchText">
+                <td *ngIf="authService.hasRole('ROLE_USER')">
+                    <img *ngIf="usuario?.foto" src="{{urlBackend}}/api/uploads/img/{{usuario.foto}}" class="img-thumbnail rounded" style="width: 84px;">
+                    <img *ngIf="!usuario?.foto" src="{{urlBackend}}/images/no-image.png" alt="Sin foto" class="img-thumbnail rounded" style="width: 84px;">
+                </td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.createAt}}</td>
+                <td>{{changeRole(usuario.roles)}}</td>
+                <td><button type="button" (click)="makeAdmin(usuario)" class="btn btn-danger btn-sm" *ngIf="authService.hasRole('ROLE_ADMIN') && !verifyRoles(usuario.roles)">Make Developer</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

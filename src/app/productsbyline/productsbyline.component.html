@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xl-4 col-md-6" *ngFor="let product of products">
+        <div class="card border-dark mb-4" style="cursor: pointer;">
+            <h3 class="card-header bg-light border-warning">{{product.product_name}}</h3>
+            <div class="card-body">
+                <p class="card-text">{{product.product_description}}</p>
+                
+              <footer class="blockquote-footer">Cost: {{product.sell_price | currency:'USD'}}</footer>
+              <footer class="blockquote-footer">Vendor: {{product.product_vendor}}</footer>
+              <footer class="blockquote-footer">Product Code: {{product.product_code}}</footer>
+              <footer class="blockquote-footer">Stock: {{product.quantity_stock}}</footer>
+            </div>
+        </div>
+    </div>
+</div>
