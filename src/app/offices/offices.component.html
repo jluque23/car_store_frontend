@@ -1,0 +1,31 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Corporate Offices</h1>
+        <p class="lead">Here you can find your nearest Office at your place</p>
+        <hr class="my-2">
+    </div>
+</div>
+
+<div class="container" *ngFor="let office of offices">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading"> {{office.city}}<span class="text-muted">, {{office.country}} {{office.state}}</span></h2>
+            <p class="lead">{{office.address_line_1}} - {{office.address_line_2}}</p>
+            <p class="blockquote-footer">Phone: {{office.phone}}</p>
+            <p class="blockquote-footer">Postal Code: {{office.postal_code}}</p>
+            <p class="blockquote-footer">Territory: {{office.territory}}</p>
+
+        </div>
+        <div class="col-md-5">
+            <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" [src]="makeGoogleMap(office)"></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr class="featurette-divider">
+
+
+<app-footer></app-footer>

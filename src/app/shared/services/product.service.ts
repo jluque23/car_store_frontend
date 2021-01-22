@@ -12,7 +12,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  private urlEndPoint = `${URL_BACKEND}/api/products`;  
+  private urlEndPoint = `${URL_BACKEND}/api/products`;
 
   constructor(private http: HttpClient, private router:Router) { }
 
@@ -31,7 +31,7 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.urlEndPoint}/findbyproductline/${id}`).pipe(
       catchError(e => {
         if (e.status !== 401 && e.error.mensaje) {
-          Swal.fire('Inexistent Bug!', `${e.error.mensaje}!`, 'error').then((result) => {
+          Swal.fire('Inexistent Product!', `${e.error.mensaje}!`, 'error').then((result) => {
             if (result.value) {
               this.router.navigate(['/openedbugs']);
             }
