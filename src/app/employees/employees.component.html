@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="card-columns">
+        <div class="card" *ngFor="let employee of employees">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <img src="/assets/images/employee.jpeg" class="float-right rounded" alt="Cinque Terre">
+                <h4 class="card-title">{{employee.first_name}} {{employee.last_name}}</h4>
+                <p class="blockquote-footer">Office: {{employee.office.city}}</p>
+                <p class="blockquote-footer">Job Title: {{employee.job_title}}</p>
+                <p class="blockquote-footer">Email: {{employee.email}}</p>
+                <p class="blockquote-footer">Extension: {{employee.extension}}</p>
+            </div>
+        </div>
+    </div>
+</div>

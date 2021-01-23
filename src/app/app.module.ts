@@ -42,6 +42,9 @@ import { ShopcartComponent } from './shopcart/shopcart.component';
 import { CarstoreComponent } from './carstore/carstore.component';
 import { ProductsbylineComponent } from './productsbyline/productsbyline.component';
 import { OfficesComponent } from './offices/offices.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { PrivacyComponent } from './shared/helpers/privacy/privacy.component';
+import { AboutmeComponent } from './shared/helpers/aboutme/aboutme.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/carstore', pathMatch: 'full' },
@@ -60,7 +63,10 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'shopcart', component: ShopcartComponent},
   { path: 'productsbyline/:productLineId', component: ProductsbylineComponent},
-  { path: 'offices', component: OfficesComponent}
+  { path: 'offices', component: OfficesComponent},
+  { path: 'employees', component: EmployeesComponent},
+  { path: 'privacy', component: PrivacyComponent},
+  { path: 'aboutme', component: AboutmeComponent}
 ];
 
 @NgModule({
@@ -87,7 +93,10 @@ const routes: Routes = [
     ShopcartComponent,
     CarstoreComponent,
     ProductsbylineComponent,
-    OfficesComponent
+    OfficesComponent,
+    EmployeesComponent,
+    PrivacyComponent,
+    AboutmeComponent
   ],
   imports: [
     BrowserModule,
