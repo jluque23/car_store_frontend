@@ -50,7 +50,14 @@ import { OfficesComponent } from './offices/offices.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { PrivacyComponent } from './shared/helpers/privacy/privacy.component';
 import { AboutmeComponent } from './shared/helpers/aboutme/aboutme.component';
-import { DashboardsidebarComponent } from './shared/helpers/dashboardsidebar/dashboardsidebar.component';
+import { DashboardsidebarComponent } from './dashboard/dashboardsidebar/dashboardsidebar.component';
+import { CustomersdashboardComponent } from './dashboard/customersdashboard/customersdashboard.component';
+import { EmployeesdashboardComponent } from './dashboard/employeesdashboard/employeesdashboard.component';
+import { OfficesdashboardComponent } from './dashboard/officesdashboard/officesdashboard.component';
+import { OrdersdashboardComponent } from './dashboard/ordersdashboard/ordersdashboard.component';
+import { PaymentsdashboardComponent } from './dashboard/paymentsdashboard/paymentsdashboard.component';
+import { ProductsdashboardComponent } from './dashboard/productsdashboard/productsdashboard.component';
+import { ProductlinesdashboardComponent } from './dashboard/productlinesdashboard/productlinesdashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/carstore', pathMatch: 'full' },
@@ -73,7 +80,14 @@ const routes: Routes = [
   { path: 'employees', component: EmployeesComponent},
   { path: 'privacy', component: PrivacyComponent},
   { path: 'aboutme', component: AboutmeComponent},
-  { path: 'dashboardnew', component: DashboardsidebarComponent}
+  { path: 'dashboardnew', component: DashboardsidebarComponent},
+  { path: 'customersdashboard', component: CustomersdashboardComponent},
+  { path: 'employeesdashboard', component: EmployeesdashboardComponent},
+  { path: 'officesdashboard', component: OfficesdashboardComponent},
+  { path: 'ordersdashboard', component: OrdersdashboardComponent},
+  { path: 'paymentsdashboard', component: PaymentsdashboardComponent},
+  { path: 'productsdashboard', component: ProductsdashboardComponent},
+  { path: 'productlinesdashboard', component: ProductlinesdashboardComponent}
 ];
 
 @NgModule({
@@ -105,6 +119,13 @@ const routes: Routes = [
     PrivacyComponent,
     AboutmeComponent,
     DashboardsidebarComponent,
+    CustomersdashboardComponent,
+    EmployeesdashboardComponent,
+    OfficesdashboardComponent,
+    OrdersdashboardComponent,
+    PaymentsdashboardComponent,
+    ProductsdashboardComponent,
+    ProductlinesdashboardComponent,
   ],
   imports: [
     BrowserModule,

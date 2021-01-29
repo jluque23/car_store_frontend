@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-dashboardsidebar></app-dashboardsidebar>
+        </div>
+        <div class="col-10">
+
+            <h1 class="display-1 mt-4 mb-4">Customers<i class="fas fa-people-carry"></i></h1>
+
+            <div class="input mb-3">
+                <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Bug"> -->
+                <input type="text" class="form-control" placeholder="Search Customer">
+            </div>
+            <div class="table-responsive rounded">
+                <table class="table rounded table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Solved</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr [routerLink]="['/detallebug/', bug.id]" *ngFor="let bug of this.bugs?.reverse() | filter:searchText">
+                            <td>{{bug.id}}</td>
+                            <td>{{bug.title}}</td>
+                            <td>{{solvedOrNot(bug.enabled)}}</td>
+                            <td>{{bug.createAt}}</td>
+                        </tr> -->
+                        <tr>
+                            <td>id</td>
+                            <td>title</td>
+                            <td>Solved</td>
+                            <td>date</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
