@@ -4,6 +4,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -45,6 +50,7 @@ import { OfficesComponent } from './offices/offices.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { PrivacyComponent } from './shared/helpers/privacy/privacy.component';
 import { AboutmeComponent } from './shared/helpers/aboutme/aboutme.component';
+import { DashboardsidebarComponent } from './shared/helpers/dashboardsidebar/dashboardsidebar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/carstore', pathMatch: 'full' },
@@ -66,7 +72,8 @@ const routes: Routes = [
   { path: 'offices', component: OfficesComponent},
   { path: 'employees', component: EmployeesComponent},
   { path: 'privacy', component: PrivacyComponent},
-  { path: 'aboutme', component: AboutmeComponent}
+  { path: 'aboutme', component: AboutmeComponent},
+  { path: 'dashboardnew', component: DashboardsidebarComponent}
 ];
 
 @NgModule({
@@ -96,7 +103,8 @@ const routes: Routes = [
     OfficesComponent,
     EmployeesComponent,
     PrivacyComponent,
-    AboutmeComponent
+    AboutmeComponent,
+    DashboardsidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,7 +113,15 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
     BrowserAnimationsModule,
-    ReactiveFormsModule, MatAutocompleteModule, MatInputModule, MatFormFieldModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule, 
+    MatInputModule, 
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
     Ng2SearchPipeModule,
     NgbModule,
     NgxSpinnerModule

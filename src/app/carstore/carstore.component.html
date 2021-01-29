@@ -1,23 +1,25 @@
-<section class="py-5 text-center container">
-    <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Car Store</h1>
-            <p class="lead text-muted">What is Car Store? We offer a lot of scale really looking cars that exists in real life, you can get a look through all the options we give you.</p>
-            <p>
+<div class="container">
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Car Store</h1>
+                <p class="lead text-muted">What is Car Store? We offer a lot of scale really looking cars that exists in real life, you can get a look through all the options we give you.</p>
+                <p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="row">
-    <div class="col-sm-4 mb-4" *ngFor="let productLine of productLines">
-        <div class="card">
-            <img src="{{productLine.image}}" class="card-img-top rounded" alt="...">
-            <div class="card-body text-center">
-                <h1 class="card-title">{{productLine.productLine}}</h1>
-                <p class="card-text">{{productLine.description}}</p>
-                <div class="btn-group">
-                    <button type="button" [routerLink]="['/productsbyline/', productLine.id]" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+    <div class="row">
+        <div class="col-sm-4 mb-4" *ngFor="let productLine of productLines">
+            <div class="card">
+                <img src="{{productLine.image}}" class="card-img-top rounded" alt="...">
+                <div class="card-body text-center">
+                    <h1 class="card-title">{{productLine.productLine}}</h1>
+                    <p class="card-text">{{productLine.description}}</p>
+                    <div class="btn-group">
+                        <button type="button" [routerLink]="['/productsbyline/', productLine.id]" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
                 </div>
             </div>
         </div>

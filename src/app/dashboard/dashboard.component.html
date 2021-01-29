@@ -1,50 +1,60 @@
-<h1 class="display-1 mb-3">Dashboard<i class="fas fa-users"></i></h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-dashboardsidebar></app-dashboardsidebar>
+        </div>
+        <div class="col-10">
 
-<!-- Cards -->
-<div class="row">
-    <div class="col-sm-4">
-        <div class="card border-dark mb-4">
-            <div class="card-body bg-light d-flex align-items-center justify-content-between">
-                <h3>Detected Bugs {{totalBugs}}</h3>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="card border-success mb-4">
-            <div class="card-body bg-light d-flex align-items-center justify-content-between">
-                <h3 href="#">Solved Bugs {{solvedBugs}}</h3>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="card border-warning mb-4">
-            <div class="card-body bg-light d-flex align-items-center justify-content-between">
-                <h3 href="#">Unsolved Bugs {{activeBugs}}</h3>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="input mb-3">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Bug">
-</div>
-<div class="table-responsive rounded">
-    <table class="table rounded table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Solved</th>
-                <th scope="col">Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr [routerLink]="['/detallebug/', bug.id]" *ngFor="let bug of this.bugs?.reverse() | filter:searchText">
-                <td >{{bug.id}}</td>
-                <td>{{bug.title}}</td>
-                <td>{{solvedOrNot(bug.enabled)}}</td>
-                <td>{{bug.createAt}}</td>
-            </tr>
-        </tbody>
-    </table>
+            <h1 class="display-1 mb-4">Dashboard<i class="fas fa-users"></i></h1>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card border-dark mb-4">
+                        <div class="card-body bg-light d-flex align-items-center justify-content-between">
+                            <h3>Detected Bugs {{totalBugs}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card border-success mb-4">
+                        <div class="card-body bg-light d-flex align-items-center justify-content-between">
+                            <h3 href="#">Solved Bugs {{solvedBugs}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card border-warning mb-4">
+                        <div class="card-body bg-light d-flex align-items-center justify-content-between">
+                            <h3 href="#">Unsolved Bugs {{activeBugs}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input mb-3">
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Bug">
+            </div>
+            <div class="table-responsive rounded">
+                <table class="table rounded table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Solved</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr [routerLink]="['/detallebug/', bug.id]" *ngFor="let bug of this.bugs?.reverse() | filter:searchText">
+                            <td>{{bug.id}}</td>
+                            <td>{{bug.title}}</td>
+                            <td>{{solvedOrNot(bug.enabled)}}</td>
+                            <td>{{bug.createAt}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
