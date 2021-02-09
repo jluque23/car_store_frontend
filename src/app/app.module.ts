@@ -9,13 +9,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/helpers/header/header.component';
 import { FooterComponent } from './shared/helpers/footer/footer.component';
-import { PaginatorComponent } from './shared/helpers/paginator/paginator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
@@ -95,7 +95,6 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PaginatorComponent,
     LoginComponent,
     SignupComponent,
     SettingsComponent,
@@ -145,7 +144,8 @@ const routes: Routes = [
     MatIconModule,
     Ng2SearchPipeModule,
     NgbModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
