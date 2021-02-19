@@ -8,7 +8,7 @@ export class Employee {
     extension: string;
     email: string;
     office: Office;
-    reportsTo: Employee;
+    reports_to: Employee;
     job_title: string;
     create_at: string;
 

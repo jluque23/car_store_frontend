@@ -25,11 +25,6 @@ export class CustomerService {
         return response;
       })
     );
-    
   }
 
-  getUrlPaginator(){
-    let newUrl = this.urlEndPoint+'/page/';
-    return newUrl;
-  }
 }

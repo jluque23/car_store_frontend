@@ -26,7 +26,7 @@ export class OfficeService {
     );
   }
   
-  getOfficesPagination(page: number): Observable<any> {
+  getOfficesByPage(page: number): Observable<any> {
     return this.http.get(this.urlEndPoint +'/page/' + page).pipe(
       map((response: any) =>{
       (response.content as Office[]).map(office => {

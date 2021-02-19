@@ -10,8 +10,6 @@ import { CustomerService } from 'src/app/shared/services/customer.service';
 })
 export class CustomersdashboardComponent implements OnInit {
 
-  config: any;
-
   customers: Customer[];
   paginador: any;
 
@@ -25,16 +23,20 @@ export class CustomersdashboardComponent implements OnInit {
     this.getCustomers();
   }
 
-  getCustomers(){
+  getCustomers() {
     this.activatedRoute.paramMap.subscribe(params => {
-      
-      // this.page = +params.get('page');
-      
-      if (!this.page) {
-        this.page = 0;
+
+      let currentPage = this.page;
+
+      if (!currentPage) {
+        currentPage = 0;
       }
-  
-      this.customerService.getCustomers(this.page).subscribe(response =>{
+
+      if (currentPage > 0) {
+        currentPage = currentPage - 1;
+      }
+
+      this.customerService.getCustomers(currentPage).subscribe(response => {
         this.customers = response.content as Customer[];
         this.paginador = response;
 

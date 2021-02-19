@@ -16,8 +16,13 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Solved</th>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Extension</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Office</th>
+                            <!-- <th scope="col">Reports To</th> -->
+                            <th scope="col">Job Title</th>
                             <th scope="col">Date</th>
                         </tr>
                     </thead>
@@ -28,14 +33,27 @@
                             <td>{{solvedOrNot(bug.enabled)}}</td>
                             <td>{{bug.createAt}}</td>
                         </tr> -->
-                        <tr>
-                            <td>id</td>
-                            <td>title</td>
-                            <td>Solved</td>
-                            <td>date</td>
+                        <tr *ngFor="let employee of employees | paginate : {
+                            itemsPerPage: pageSize,
+                            currentPage: page,
+                            totalItems: items};">
+
+                            <td>{{employee.id}}</td>
+                            <td>{{employee.first_name}}</td>
+                            <td>{{employee.last_name}}</td>
+                            <td>{{employee.extension}}</td>
+                            <td>{{employee.email}}</td>
+                            <td>{{employee.office.city}}</td>
+                            <!-- <td>{{employee.reports_to.first_name}}</td> -->
+                            <td>{{employee.job_title}}</td>
+                            <td>{{employee.create_at}}</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="col-md-12">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" responsive="true" (pageChange)="handlePageChange($event)"></pagination-controls>
             </div>
         </div>
     </div>

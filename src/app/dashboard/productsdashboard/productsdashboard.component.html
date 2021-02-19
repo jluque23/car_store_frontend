@@ -16,9 +16,15 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Solved</th>
-                            <th scope="col">Date</th>
+                            <th scope="col">Product Code</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Line Id</th>
+                            <th scope="col">Product Scale</th>
+                            <th scope="col">Product Vendor</th>
+                            <th scope="col">Product Description</th>
+                            <th scope="col">Quantity Stock</th>
+                            <th scope="col">Buy Price</th>
+                            <th scope="col">Sell Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,14 +34,27 @@
                             <td>{{solvedOrNot(bug.enabled)}}</td>
                             <td>{{bug.createAt}}</td>
                         </tr> -->
-                        <tr>
-                            <td>id</td>
-                            <td>title</td>
-                            <td>Solved</td>
-                            <td>date</td>
+                        <tr *ngFor="let product of products | paginate : {
+                            itemsPerPage: pageSize,
+                            currentPage: page,
+                            totalItems: items};">
+
+                            <td>{{product.id}}</td>
+                            <td>{{product.product_code}}</td>
+                            <td>{{product.product_name}}</td>
+                            <td>{{product.product_line_id}}</td>
+                            <td>{{product.product_scale}}</td>
+                            <td>{{product.product_vendor}}</td>
+                            <td>{{product.product_description}}</td>
+                            <td>{{product.quantity_stock}}</td>
+                            <td>{{product.buy_price}}</td>
+                            <td>{{product.sell_price}}</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="col-md-12">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" responsive="true" (pageChange)="handlePageChange($event)"></pagination-controls>
             </div>
         </div>
     </div>
